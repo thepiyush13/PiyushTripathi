@@ -68,7 +68,7 @@ Vertex()
 
 Sample data
 
-> vertex3199 vertex278(278) vertex 813(813) vertex 1419(1419) vertex 1937(1937) vertex 2832(2832) vertex 2935(2935) vertex 3197 vertex 499(499) vertex 1161(1161) vertex 2304(2304) vertex 2477(2477) vertex 2648(2648) vertex 3795(3795)
+    vertex3199 vertex278(278) vertex 813(813) vertex 1419(1419) vertex 1937(1937) vertex 2832(2832) vertex 2935(2935) vertex 3197 vertex 499(499) vertex 1161(1161) vertex 2304(2304) vertex 2477(2477) vertex 2648(2648) vertex 3795(3795)
 
 Visual representation
 
@@ -81,7 +81,7 @@ Vertex()
 
 Sample data
 
-> vertex3956 vertex195(195) vertex3189(3189) vertex3750(3750) vertex4458(4458) vertex4743(4743) vertex4638(4638)…………………… 1000
+    vertex3956 vertex195(195) vertex3189(3189) vertex3750(3750) vertex4458(4458) vertex4743(4743) vertex4638(4638)…………………… 1000
 
 visual representation
 
@@ -91,29 +91,29 @@ Running all three algorithms do not produce any visible output as we are interes
 
  
 
-GraphType	AlgoType	Time(milliseconds)
+    GraphType	AlgoType	Time(milliseconds)
 
-Dense	Dijkstra	180.23882
+    Dense	Dijkstra	180.23882
 
-Dense	DijkstraWithHeap	631.52218
+    Dense	DijkstraWithHeap	631.52218
 
-Dense	Kruskal	2099.95518
+    Dense	Kruskal	2099.95518
 
-Sparse	Dijkstra	226.95219
+    Sparse	Dijkstra	226.95219
 
-Sparse	DijkstraWithHeap	331.5543
+    Sparse	DijkstraWithHeap	331.5543
 
-Sparse	Kruskal	35.01325
+    Sparse	Kruskal	35.01325
 
 Finally we also calculate average time taken by each of the algorithms for all 5 types of graph we discussed, it is displayed in following fashion:
 
  
 
-GraphType	Dijkstra	Dijkstra with Heap	Kruskal)
+    GraphType	Dijkstra	Dijkstra with Heap	Kruskal)
 
-Avg Sparse(milliseconds)	64.43458	168.16116	13.83308
+    Avg Sparse(milliseconds)	64.43458	168.16116	13.83308
 
-Avg Dense(milliseconds)	191.25397	579.72298	1736.39182
+    Avg Dense(milliseconds)	191.25397	579.72298	1736.39182
 
  
 
@@ -137,10 +137,7 @@ Thus we see that different algorithms perform differently for different types of
 For future improvement I think we can introduce efficient data structures for each of the algorithms. Fox example instead of using union find we could introduce an algorithm which computes same process in less time. We can also improve underlying code structure for handling edge cases and avoid to compute where it is not required and the computing has already been done by previous computations. We can also look into improving the platform we use to run these algorithms as this will make memory management more efficient and with more computing power the overall time taken could be reduced.
 
 # References
-Cormen, Thomas H. Introduction to algorithms. MIT press, 2009.
-
-Sedgewick, Robert. Algorithms in Java, Parts 1-4.
-
-Addison-Wesley Professional, 2002.Steier, David M, and Elaine Kant.
-
-“The Roles of Execution and Analysis in Algorithm Design.” Software Engineering, IEEE Transactions on 11 (1985): 1375-1386.
+* Cormen, Thomas H. Introduction to algorithms. MIT press, 2009.
+* Sedgewick, Robert. Algorithms in Java, Parts 1-4.
+* Addison-Wesley Professional, 2002.Steier, David M, and Elaine Kant.
+* “The Roles of Execution and Analysis in Algorithm Design.” Software Engineering, IEEE Transactions on 11 (1985): 1375-1386.
