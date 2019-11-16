@@ -7,7 +7,7 @@
  *    IE on Windows Phone and in iOS.
  */
 html {
-  line-height: 1.7;
+  line-height: 1.9;
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
@@ -770,7 +770,7 @@ template {
 }
 
 html {
-  line-height: 1.5;
+  line-height: 1.9;
 }
 
 body {
@@ -1208,7 +1208,7 @@ a.newer-posts:hover {
 .header-page .page-title {
   font-weight: 400;
   margin: 0 0 10px;
-  line-height: 1.3;
+  line-height: 1.9;
 }
 
 .header-page .page-date {
@@ -1317,7 +1317,7 @@ a.newer-posts:hover {
 .blog-tags h1 {
   font-size: 30px;
   text-align: center;
-  line-height: 1.3;
+  line-height: 1.9;
   color: #263959;
 }
 
