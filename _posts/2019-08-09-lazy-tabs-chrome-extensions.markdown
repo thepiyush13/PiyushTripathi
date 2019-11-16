@@ -1,6 +1,6 @@
 ---
 layout: post
-title: LazyTabs : Tab manager for lazy people
+title: LazyTabs Tab manager for lazy people
 date: 2019-09-12 13:32:20 +0300
 description: A Tab manager extension for google chrome # Add post description (optional)
 img: icons/list.svg #i-rest.jpg # Add image post (optional)
