@@ -1138,7 +1138,7 @@ footer .copyright {
 }
 
 .post .post-thumbnail {
-  width: 30%;
+  width: 20%;
   max-width: 100%;
   min-height: 11rem;
   -webkit-background-size: cover;
@@ -1225,6 +1225,7 @@ a.newer-posts:hover {
   max-height: 500px;
   background-color: #fafafa;
   overflow: hidden;
+  text-align: center;
 }
 
 .page-cover-image figure {
@@ -1245,7 +1246,7 @@ a.newer-posts:hover {
 }
 
 .page-cover-image .page-image {
-  width: 100%;
+  width: 20%;
   height: 100%;
 }
 
