@@ -85,7 +85,7 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 pre {
-  font-family: monospace, monospace;
+  font-family: sans-serif, monospace;
   /* 1 */
   font-size: 1em;
   /* 2 */
@@ -141,7 +141,7 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
+  font-family: sans-serif, monospace;
   /* 1 */
   font-size: 1em;
   /* 2 */
@@ -774,7 +774,7 @@ html {
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: sans-serif;
   color: #515151;
   background-color: #fbfbfb;
   margin: 0;
@@ -970,7 +970,7 @@ table tfoot td {
 }
 
 .about .author-name {
-  font-family: 'PT Serif', serif;
+  font-family: sans-serif;
   margin: 0 0 10px;
   position: relative;
   padding-bottom: 15px;
@@ -1163,7 +1163,7 @@ footer .copyright {
 }
 
 .post .post-content .post-title a {
-  font-family: 'PT Serif', serif;
+  font-family: sans-serif;
   text-decoration: none;
   color: #263959;
 }
