@@ -15,56 +15,31 @@ So that you could quickly lookup what each services does without going into deta
 
 ## How
 ## AWS Terms:
-### AWS management console: ###  
-web interface to manage stuff
-### EC2: ###  
-virtual server where software can be installed
-### BeanStalk: ###  
-upload code and run website automatically
-### VPC: ###  
-virtual private cloud, simulates network virtually
-### Direct connect: ###  
-connect company’s data center to AWS
-### Route 53: ###  
-highly available DNS web service
-### S3: ###  
-highly availble and cheap storage, can store anyting
-### Glacier: ###  
-storage for data archive or backup
-### CloudFront: ###  
-CDN localized
-### RDS: ###  
-relational db
-### DynamoDb: ###  
-noSQL db
-### Redshift: ###  
-data warehouse for reporting
-### ElastiCache: ###  
-in memory cache
-### CloudWatch: ###  
-monitoring service for alerts,metrics
-### CloudFormation: ###  
-terraform like Paas Service
-### CloudTrail: ###  
-logging for API requests
-### Config: ###  
-logs config settings for AWS
-### IAM: ###  
-identity management and auth
-### KMS: ###  
-key management systems, encryption
-### SNS: ###  
-simple notification, pub sub on cloud
-### SES: ###  
-simple email
-### SQS: ###  
-simple queue service, message queue bus
-### Regions: ###  
-geographic region with a cluster of data centers
-### Zones: ###  
-one of more data center in a region
-### Regions: ###  
-(R1,R2..) > Zones (Z1, Z2,..) provide isolation & no single point of failure
+	### AWS management console: ###   web interface to manage stuff
+	### EC2: ###   virtual server where software can be installed
+	### BeanStalk: ###   upload code and run website automatically
+	### VPC: ###   virtual private cloud, simulates network virtually
+	### Direct connect: ###   connect company’s data center to AWS
+	### Route 53: ###   highly available DNS web service
+	### S3: ###   highly availble and cheap storage, can store anyting
+	### Glacier: ###   storage for data archive or backup
+	### CloudFront: ###   CDN localized
+	### RDS: ###   relational db
+	### DynamoDb: ###   noSQL db
+	### Redshift: ###   data warehouse for reporting
+	### ElastiCache: ###   in memory cache
+	### CloudWatch: ###   monitoring service for alerts,metrics
+	### CloudFormation: ###   terraform like Paas Service
+	### CloudTrail: ###   logging for API requests
+	### Config: ###   logs config settings for AWS
+	### IAM: ###   identity management and auth
+	### KMS: ###   key management systems, encryption
+	### SNS: ###   simple notification, pub sub on cloud
+	### SES: ###   simple email
+	### SQS: ###   simple queue service, message queue bus
+	### Regions: ###   geographic region with a cluster of data centers
+	### Zones: ###   one of more data center in a region
+	### Regions: ###   (R1,R2..) > Zones (Z1, Z2,..) provide isolation & no single point of failure
 
 
 
