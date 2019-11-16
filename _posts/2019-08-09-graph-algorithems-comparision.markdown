@@ -65,40 +65,56 @@ Results can be categorized in following categories:
 ## Sparse Graph
 For Sparse graph the nodes had to be an exact number (6) thus it is important that each vertex only connects to exactly 5 other vertices. I have saved the graph data structure to a file to better understand the relationship between connected vertices. Here is a sample of generated graph:
 Vertex()
+
 Sample data
-vertex3199 vertex278(278) vertex 813(813) vertex 1419(1419) vertex 1937(1937) vertex 2832(2832) vertex 2935(2935)
-vertex 3197 vertex 499(499) vertex 1161(1161) vertex 2304(2304) vertex 2477(2477) vertex 2648(2648) vertex 3795(3795)
+
+> vertex3199 vertex278(278) vertex 813(813) vertex 1419(1419) vertex 1937(1937) vertex 2832(2832) vertex 2935(2935) vertex 3197 vertex 499(499) vertex 1161(1161) vertex 2304(2304) vertex 2477(2477) vertex 2648(2648) vertex 3795(3795)
+
 Visual representation
-Spare Grpah
+
+Sparse Grpah
 We can see that the sparse graph has each vertex connected to exactly 5 other vertices which satisfies the requirement. It can also be noted that there are no duplicate vertices and self-loops in the graph. This was handled by the algorithm logic stated in the previous sections.
 
 ## Dense graph
 The dense graph contains almost 1000 vertices connected to each of the vertex without self-loops or duplicate edges. The dense graph in some cases may not have exactly 1000 vertices because of constraints of the memory and respective workaround to counter that. However it is guaranteed that the graph has on an average 20% of other vertices connected to each of its vertex.
 Vertex()
+
 Sample data
-vertex3956 vertex195(195) vertex3189(3189) vertex3750(3750) vertex4458(4458) vertex4743(4743) vertex4638(4638)…………………… 1000
+
+> vertex3956 vertex195(195) vertex3189(3189) vertex3750(3750) vertex4458(4458) vertex4743(4743) vertex4638(4638)…………………… 1000
+
 visual representation
+
 Dense Grpah
+
 Running all three algorithms do not produce any visible output as we are interested in the time taken by each. At the end we get the time complexity analysis of each of the three algorithms on console output. Below is the sample output received after running all the algorithms:
 
  
 
 GraphType	AlgoType	Time(milliseconds)
+
 Dense	Dijkstra	180.23882
+
 Dense	DijkstraWithHeap	631.52218
+
 Dense	Kruskal	2099.95518
+
 Sparse	Dijkstra	226.95219
+
 Sparse	DijkstraWithHeap	331.5543
+
 Sparse	Kruskal	35.01325
- 
 
 Finally we also calculate average time taken by each of the algorithms for all 5 types of graph we discussed, it is displayed in following fashion:
 
  
 
 GraphType	Dijkstra	Dijkstra with Heap	Kruskal)
+
 Avg Sparse(milliseconds)	64.43458	168.16116	13.83308
+
 Avg Dense(milliseconds)	191.25397	579.72298	1736.39182
+
  
 
 # Performance Analysis
@@ -122,6 +138,9 @@ For future improvement I think we can introduce efficient data structures for ea
 
 # References
 Cormen, Thomas H. Introduction to algorithms. MIT press, 2009.
+
 Sedgewick, Robert. Algorithms in Java, Parts 1-4.
+
 Addison-Wesley Professional, 2002.Steier, David M, and Elaine Kant.
+
 “The Roles of Execution and Analysis in Algorithm Design.” Software Engineering, IEEE Transactions on 11 (1985): 1375-1386.
