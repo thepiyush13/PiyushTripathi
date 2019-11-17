@@ -49,7 +49,7 @@ Writing infrstructeua as code is a powerful technuque. This mainly helps with th
     Simple syntex to use terraform is 
 
         resource "PROVIDER_TYPE" "NAME" {
-        [CONFIG ...]
+            [CONFIG ...]
         }
 
     Example:
@@ -58,12 +58,18 @@ Writing infrstructeua as code is a powerful technuque. This mainly helps with th
             ami = "ami-xxxxx"
             instance_type = "t2.micro"
         }
+
+- Creating resources: 
+    Here we will try to create the actual resource
         
-- Creating resources: Here we will try to create the actual resource
         terraform apply 
+    
     (from folder where main.tf is)
+
 - Destroying resources
+        
         terraform destroy
+    
     remove the created resource once no longer needed
 
 
