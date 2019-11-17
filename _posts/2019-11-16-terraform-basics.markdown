@@ -10,7 +10,7 @@ tags: [terraform, aws]
 
 
 
-# what
+# what is Terraform
 
 Terraform is an open source tool which helps you deploy and manage infrastructure seamlessly across a veriety of providers. some of them are :
 
@@ -23,7 +23,7 @@ Terraform is an open source tool which helps you deploy and manage infrastructur
 
   
 
-# Why
+# Why Terraform
 
 Writing infrstructeua as code is a powerful technuque. This mainly helps with the following:
 
@@ -35,15 +35,32 @@ Writing infrstructeua as code is a powerful technuque. This mainly helps with th
   
 
 # Installing terraform
+- Download the package from https://www.terraform.io/
+- Add binary terraform to your PATH environment variable
+- Setup Providers login details. For example setup AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY if you want to use terraform with AWS
 
   
   
 
 # Using terraform
 
-- Creating resources
-
+- Defining resources: create a file main.tf with the following 
+    Simple syntex to use terraform is 
+        resource "PROVIDER_TYPE" "NAME" {
+        [CONFIG ...]
+        }
+    Example:
+        resource "aws_instance" "test" {
+            ami = "ami-xxxxx"
+            instance_type = "t2.micro"
+        }
+- Creating resources: Here we will try to create the actual resource
+        terraform apply 
+    (from folder where main.tf is)
 - Destroying resources
+        terraform destroy
+    remove the created resource once no longer needed
+
 
 
 
@@ -58,92 +75,27 @@ Writing infrstructeua as code is a powerful technuque. This mainly helps with th
   
 
 # Terraform commands
-
-  
-
-- ## All Commands
-
-        Usage: terraform [-version]  [-help]  <command>  [args]
-        apply              Builds or changes infrastructure
-        console            Interactive console for Terraform interpolations
-        destroy            Destroy Terraform-managed infrastructure
-        env                Workspace management
-        fmt                Rewrites config files to canonical format
-        get                Download and install modules for the configuration
-        graph              Create a visual graph of Terraform resources
-        import             Import existing infrastructure into Terraform
-        init               Initialize a Terraform working directory
-        output             Read an output from a state file
-        plan               Generate and show an execution plan
-        providers          Prints a tree of the providers used in the configuration
-        push               Upload this Terraform module to Atlas to run
-        refresh            Update local state file against real resources
-        show               Inspect Terraform state or plan
-        taint              Manually mark a resource for recreation
-        untaint            Manually unmark a resource as tainted
-        validate           Validates the Terraform files
-        version            Prints the Terraform version
-        workspace          Workspace management
-
-  
-
-- ## Common commands
-
-- ### Apply
-
-        Usage: terraform apply [options] [DIR-OR-PLAN]
-
-        Builds or changes infrastructure according to Terraform configuration
-        files in DIR.
-
-        By default, apply scans the current directory for the configuration
-        and applies the changes appropriately. However, a path to another
-        configuration or an execution plan can be provided. Execution plans can be
-        used to only execute a pre-determined set of actions.
-
-        Options:
-
-        -backup=path           Path to backup the existing state file before
-                                modifying. Defaults to the "-state-out" path with
-                                ".backup" extension. Set to "-" to disable backup.
-
-        -auto-approve          Skip interactive approval of plan before applying.
-
-        -lock=true             Lock the state file when locking is supported.
-
-        -lock-timeout=0s       Duration to retry a state lock.
-
-        -input=true            Ask for input for variables if not directly set.
-
-        -no-color              If specified, output won't contain any color.
-
-        -parallelism=n         Limit the number of parallel resource operations.
-                                Defaults to 10.
-
-        -refresh=true          Update state prior to checking for differences. This
-                                has no effect if a plan file is given to apply.
-
-        -state=path            Path to read and save state (unless state-out
-                                is specified). Defaults to "terraform.tfstate".
-
-        -state-out=path        Path to write state to that is different than
-                                "-state". This can be used to preserve the old
-                                state.
-
-        -target=resource       Resource to target. Operation will be limited to this
-                                resource and its dependencies. This flag can be used
-                                multiple times.
-
-        -var 'foo=bar'         Set a variable in the Terraform configuration. This
-                                flag can be set multiple times.
-
-        -var-file=foo          Set variables in the Terraform configuration from
-                                a file. If "terraform.tfvars" or any ".auto.tfvars"
-                                files are present, they will be automatically loaded.
-
-  
-
-- 
+    Usage: terraform [-version]  [-help]  <command>  [args]
+    apply              Builds or changes infrastructure
+    console            Interactive console for Terraform interpolations
+    destroy            Destroy Terraform-managed infrastructure
+    env                Workspace management
+    fmt                Rewrites config files to canonical format
+    get                Download and install modules for the configuration
+    graph              Create a visual graph of Terraform resources
+    import             Import existing infrastructure into Terraform
+    init               Initialize a Terraform working directory
+    output             Read an output from a state file
+    plan               Generate and show an execution plan
+    providers          Prints a tree of the providers used in the configuration
+    push               Upload this Terraform module to Atlas to run
+    refresh            Update local state file against real resources
+    show               Inspect Terraform state or plan
+    taint              Manually mark a resource for recreation
+    untaint            Manually unmark a resource as tainted
+    validate           Validates the Terraform files
+    version            Prints the Terraform version
+    workspace          Workspace management
 
 
 # Terraform FAQS
