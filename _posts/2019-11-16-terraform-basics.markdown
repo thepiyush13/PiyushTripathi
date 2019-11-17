@@ -16,7 +16,7 @@ Terraform is an open source tool which helps you deploy and manage infrastructur
 
   
 
- 1. Amazon Web Serv‐ices (AWS)
+ 1. Amazon Web Services (AWS)
  2. Azure
  3. Google Cloud
  4. DigitalOcean
@@ -44,7 +44,9 @@ Writing infrstructeua as code is a powerful technuque. This mainly helps with th
 
 # Using terraform
 
-- Defining resources: create a file main.tf with the following 
+- ## Defining resources: 
+
+    create a file main.tf with the following 
 
     Simple syntex to use terraform is 
 
@@ -59,14 +61,14 @@ Writing infrstructeua as code is a powerful technuque. This mainly helps with th
             instance_type = "t2.micro"
         }
 
-- Creating resources: 
+- ## Creating resources: 
     Here we will try to create the actual resource
         
         terraform apply 
     
     (from folder where main.tf is)
 
-- Destroying resources
+- ## Destroying resources
         
         terraform destroy
     
