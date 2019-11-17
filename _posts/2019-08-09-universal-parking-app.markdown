@@ -5,7 +5,7 @@ date: 2018-08-09 13:32:20 +0300
 description: University Smart Parking Reservation System # Add post description (optional)
 img: icons/automotive.svg #i-rest.jpg # Add image post (optional)
 fig-caption: test caption # Add figcaption (optional)
-tags: [sql, design]
+tags: [Design]
 ---
 
 <div>

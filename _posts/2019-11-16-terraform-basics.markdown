@@ -5,7 +5,7 @@ date: 2019-11-16 13:32:20 +0300
 description: How to use terraform to deploy and manage AWS services # Add post description (optional)
 img: icons/neutral_trading.svg #i-rest.jpg # Add image post (optional)
 fig-caption: test caption # Add figcaption (optional)
-tags: [terraform, aws]
+tags: [Terraform, AWS]
 ---
 
 

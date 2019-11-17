@@ -5,7 +5,7 @@ date: 2019-09-12 13:32:20 +0300
 description: Describes basic terms realted to AWS # Add post description (optional)
 img: icons/flow_chart.svg #i-rest.jpg # Add image post (optional)
 fig-caption: test caption # Add figcaption (optional)
-tags: [aws, lambda, amazon]
+tags: [AWS]
 ---
 ## What
 This post has short information about various components of Amazon Web Services
