@@ -45,15 +45,20 @@ Writing infrstructeua as code is a powerful technuque. This mainly helps with th
 # Using terraform
 
 - Defining resources: create a file main.tf with the following 
+
     Simple syntex to use terraform is 
+
         resource "PROVIDER_TYPE" "NAME" {
         [CONFIG ...]
         }
+
     Example:
+
         resource "aws_instance" "test" {
             ami = "ami-xxxxx"
             instance_type = "t2.micro"
         }
+        
 - Creating resources: Here we will try to create the actual resource
         terraform apply 
     (from folder where main.tf is)
