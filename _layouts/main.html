@@ -4,6 +4,11 @@ layout: default
 
 <aside class="sidebar">
   <header>
+      <ul class="tags">
+          <li><a class="tag" href="/">Home </a></li><br/>
+          <li><a href="/tags/" class="tag">Categories</a></li>
+        </ul>
+
     <div class="about">
       <div class="cover-author-image">
         <a href="{{site.baseurl}}/"><img src="{{site.baseurl}}/assets/img/{% if site.author-img %}{{site.author-img}}{% endif %}" alt="{{site.author}}"></a>
@@ -20,11 +25,8 @@ layout: default
         
       </div>
 
-      <hr/>
-      <ul class="tags">
-              <li><a class="tag" href="/">Home </a></li>
-              <li><a href="/tags/" class="tag">Categories</a></li>
-            </ul>
+      
+      
     </div>
   </header> <!-- End Header -->
   <footer>
