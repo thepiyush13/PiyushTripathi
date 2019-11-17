@@ -10,7 +10,7 @@ tags: [Terraform, AWS]
 
 
 
-# what is Terraform
+# What is Terraform
 
 Terraform is an open source tool which helps you deploy and manage infrastructure seamlessly across a veriety of providers. some of them are :
 
@@ -34,7 +34,7 @@ Writing infrstructeua as code is a powerful technuque. This mainly helps with th
 
   
 
-# Installing terraform
+# Installing Terraform
 - Download the package from https://www.terraform.io/
 - Add binary terraform to your PATH environment variable
 - Setup Providers login details. For example setup AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY if you want to use terraform with AWS
@@ -42,7 +42,7 @@ Writing infrstructeua as code is a powerful technuque. This mainly helps with th
   
   
 
-# Using terraform
+# Using Terraform
 
 - ## Defining resources: 
 
