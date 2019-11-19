@@ -12,7 +12,7 @@ tags: [Terraform, AWS]
 
 # What is Terraform
 
-Terraform is an open source tool which helps you deploy and manage infrastructure seamlessly across a veriety of providers. some of them are :
+Terraform is an open source tool which helps you deploy and manage infrastructure seamlessly across a variety of providers. some of them are :
 
   
 
@@ -25,12 +25,12 @@ Terraform is an open source tool which helps you deploy and manage infrastructur
 
 # Why Terraform
 
-Writing infrstructeua as code is a powerful technuque. This mainly helps with the following:
+Writing infrastructure as code is a powerful technique. This mainly helps with the following:
 
  1. With code you can easily automate infra management
  2. reduce errors in complicated and time consuming configurations.
  3. do offline validation, diff or version control your changes
- 4. let others resue your configuration easily
+ 4. let others reuse your configuration easily
 
   
 
@@ -48,7 +48,7 @@ Writing infrstructeua as code is a powerful technuque. This mainly helps with th
 
     create a file main.tf with the following 
 
-    Simple syntex to use terraform is 
+    Simple syntax to use terraform is 
 
         resource "PROVIDER_TYPE" "NAME" {
             [CONFIG ...]
@@ -80,12 +80,49 @@ Writing infrstructeua as code is a powerful technuque. This mainly helps with th
   
 
 # Terraform state files
-
+Terraform maps the resources you defined in the template file to the resources it actually created in a JSON format. This file is called terraform state. This file resides in the same folder with the name `terraform.tfstate`. This state file is updated everytime you modify the resources. A good idea is to store this state file somewhere on S3 or a shared storage so everyone can work with the same state file and people do not end up with conflicting set of resources.
   
 
 # Terraform modules
+Terraform modules are the templates inside a folder. Modules are needed because they reduce code duplication and can work for multiple stages (dev, stage, prod). Terraform modules have three parts:
+To understand this we need to think of terraform modules as functions in a programming language. Each function has input,output and actions. so for terraform:
 
-  
+    (input + definition + output) = Terraform module 
+
+## Input : 
+These are the parameters a module can accept while being called. They are defined in a `vars.tf` file inside the module folder. They can be of type bool, number or string. Inputs make a module more flexible as we can change the way the module behaves just by changing the inputs to the module. 
+
+## Definition : 
+The module file `main.tf` has the definitions of the various actions our module will perform. This file is considered the source of any terraform module. This file can be sourced from any external module to call this module. 
+
+## Output : 
+These are the variables terraform produces when it executes the actions defined in `main.tf`. These variables are defined in `output.tf` file in the module folder. These variable can give you back important information about the state of the resources, i.e. getting a instance ID after creating an EC2 instance. 
+
+
+## Example
+**We will create a module to create a resource and call this module from another module.**
+
+* create a folder `my_module` and create files `vars.tf`, `output.tf` and `main.tf` inside it
+* inside the vars.tf
+    variable "type" {
+        description = "type of instance"
+    }
+*  Inside the main.tf:
+    resource "aws_instance" "test" {
+        ami = "i-xxxx"
+        instance_type = "${var.type}"
+    }
+* Inside the output.tf:
+    output "name" {
+        value = "${aws_instance.test.name}"
+    }
+* Now to call this module:
+    module "my_module" {
+        source = "modules/my_module"
+        type =   "t2.micro"
+    }
+if you want to access the name of the created resource, you could do `${module.my_module.name}`
+
 
 # Terraform commands
     Usage: terraform [-version]  [-help]  <command>  [args]
@@ -113,10 +150,60 @@ Writing infrstructeua as code is a powerful technuque. This mainly helps with th
 
 # Terraform FAQS
 
+## What is terraform interpolation?
+interpolation is used if you want to use dynamic values or refer to expressions within terraform. it is wrapped in ${}. For example `${var.foo}` or `${var.myArray['foo']}` and `${var.count+1}` are all examples of interpolation. You can find out more about it [here](https://www.terraform.io/docs/configuration-0-11/interpolation.html)
+
+## what are terraform variables?
+Read section `Terraform modules > Input` section above for details about input variables.
+
+## what are terraform providers?
+Providers are the infrastructure services that terraform is compatible with. Terraform supports a number of providers: AWS, GCP, Microsoft Azure, OpenStack, Heroku, DNSimple, CloudFlare. See [here](https://www.terraform.io/docs/providers/index.html) for more details.
+
+## How to create an aws lambda with terraform?
+    resource "aws_lambda_function" "my_lambda" {
+    filename      = "lambda_file.zip"
+    function_name = "function_name"
+    role          = "<setup your IAM role here>"
+    handler       = "exports.test"
+    source_code_hash = "${filebase64sha256("lambda_file.zip")}"
+
+    runtime = "nodejs8.10"
+
+    environment {
+        variables = {
+        key1 = "val1"
+        }
+    }
+    }
+
+## How to create a dynamodb table from with terraform?
+    resource "aws_dynamodb_table" "test-table" {
+    name           = "test"
+    billing_mode   = "PROVISIONED"
+    read_capacity  = 5
+    write_capacity = 5
+    hash_key       = "ID"
+    range_key      = "Email"
+
+    attribute {
+        name = "ID"
+        type = "S"
+    }
+
+    attribute {
+        name = "Email"
+        type = "S"
+    }
+
+    tags = {
+        Name        = "dynamodb"
+        Environment = "production"
+    }
+    }
 
 
-
-
+**Tags**
+install terraform,terraform lambda,terraform vs ansible,terraform interpolation,terraform variables,terraform remote state,terraform providers,terraform vs cloudformation,terraform output,terraform registry,terraform workspaces,terraform locals,terraform vpc module,terraform dynamodb,terraform kubernetes,terraform iam role
 
 
 
