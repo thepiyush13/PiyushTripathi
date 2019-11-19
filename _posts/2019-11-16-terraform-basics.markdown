@@ -8,7 +8,8 @@ fig-caption: test caption # Add figcaption (optional)
 tags: [Terraform, AWS]
 ---
 
-
+# Table of Contents
+{:toc}
 
 # What is Terraform
 
