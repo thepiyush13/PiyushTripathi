@@ -1484,6 +1484,6 @@ a.newer-posts:hover {
 }
 
 /* MY CHANGES */
-.inline_toc{
+.inline_toc li a{
   color: black;
 }
