@@ -1482,3 +1482,8 @@ a.newer-posts:hover {
     font-size: 21px;
   }
 }
+
+/* MY CHANGES */
+.inline_toc{
+  color: black;
+}
