@@ -104,23 +104,23 @@ These are the variables terraform produces when it executes the actions defined 
 
 * create a folder `my_module` and create files `vars.tf`, `output.tf` and `main.tf` inside it
 * inside the vars.tf
-    variable "type" {
-        description = "type of instance"
-    }
+        variable "type" {
+            description = "type of instance"
+        }
 *  Inside the main.tf:
-    resource "aws_instance" "test" {
-        ami = "i-xxxx"
-        instance_type = "${var.type}"
-    }
+        resource "aws_instance" "test" {
+            ami = "i-xxxx"
+            instance_type = "${var.type}"
+        }
 * Inside the output.tf:
-    output "name" {
-        value = "${aws_instance.test.name}"
-    }
+        output "name" {
+            value = "${aws_instance.test.name}"
+        }
 * Now to call this module:
-    module "my_module" {
-        source = "modules/my_module"
-        type =   "t2.micro"
-    }
+        module "my_module" {
+            source = "modules/my_module"
+            type =   "t2.micro"
+        }
 if you want to access the name of the created resource, you could do `${module.my_module.name}`
 
 
