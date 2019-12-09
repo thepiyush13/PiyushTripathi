@@ -52,3 +52,25 @@ Throughput = How many requests are possible
 +----------------------------------------+  +
 
 ```
+
+## CAP Theorem
+CAP: Consistency, Availability, Partition Tolerance
+Used to design systems as you can never have a system with All 3 elements of the CAP.
+
+Consistency: is data consistent between nodes
+Availability: is every request processed
+Partition Tolerance: does system work even if some nodes go down
+
+
+```
+r1-->N1(d1)___________(link l1)__________N2(d2)<--r2
+
+ N1/N2 = nodes, d1/d2 = data at N1/N2, r1/r2 = incoming requests, l1 = partition link
+
+```
+
+CA: normal cloud systems, d1==d2 and r1,r2 always get response
+CP: faulty transactions, d1==d2 and l1 down but system working
+AP: nosql, d1~=d2, r1/r2 always get response, l1 down but system works
+
+
