@@ -24,17 +24,14 @@ Performance = How system works for Single user
 Scalability = How system works for Large no of users
 
 ```
-                         +-----+
-    X------Performance-->+     |
+                         
+    X------Performance-->+
 
-                         |     |
-                         |     |
 
-   XXXXXX                |     |
-   XXXXXX+-scalability-->+     |
-   XXXXXX                |     |
+   XXXXXX                
+   XXXXXX+-scalability-->+ 
+   XXXXXX               
 
-                         +-----+
 
 ```
 
@@ -46,13 +43,13 @@ Throughput = How many requests are possible
 ```
 +----------------------------------------+  +
 
-                                            |
+                                             |
   +-------->                                |
            +---------->                     |
                                             Throughput = 3
 
                       +---------------->    |
-                      <--Latency = t--->    |
+                      <--Latency = t--->   |
                                             |
 
 +----------------------------------------+  +
@@ -77,7 +74,13 @@ Partition Tolerance: does system work even if some nodes go down
 ```
 r1-->N1(d1)___________(link l1)__________N2(d2)<--r2
 
- N1/N2 = nodes, d1/d2 = data at N1/N2, r1/r2 = incoming requests, l1 = partition link
+ N1/N2 = nodes, 
+ 
+ d1/d2 = data at N1/N2, 
+ 
+ r1/r2 = incoming requests, 
+ 
+ l1 = partition link
 
 ```
 
@@ -123,7 +126,7 @@ Master Slave: master processes traffic & replicates to slave. Master goes down, 
 #### Fail Over: replace a new server when need
 active server processes traffic & send heartbeat to passive. Active goes down, passive becomes active
 
-# DNS server
+## DNS server
 
 type google.com in browser -> 
 
