@@ -3,7 +3,7 @@ layout: post
 title: System Design Basics
 date: 2019-11-22 13:32:20 +0300
 description: Basic of system design # Add post description (optional)
-img: icons/neutral_trading.svg #i-rest.jpg # Add image post (optional)
+img: icons/ #i-rest.jpg # Add image post (optional)
 fig-caption: image # Add figcaption (optional)
 tags: [Tech]
 ---
@@ -55,10 +55,16 @@ Throughput = How many requests are possible
 
 ## CAP Theorem
 CAP: Consistency, Availability, Partition Tolerance
+
 Used to design systems as you can never have a system with All 3 elements of the CAP.
 
+
 Consistency: is data consistent between nodes
+
+
 Availability: is every request processed
+
+
 Partition Tolerance: does system work even if some nodes go down
 
 
@@ -70,7 +76,68 @@ r1-->N1(d1)___________(link l1)__________N2(d2)<--r2
 ```
 
 CA: normal cloud systems, d1==d2 and r1,r2 always get response
+
+
 CP: faulty transactions, d1==d2 and l1 down but system working
+
+
 AP: nosql, d1~=d2, r1/r2 always get response, l1 down but system works
 
 
+Eventually consistent (weak consistent, A, P): 
+update N1 or N2, background process updates other nodes, time delay for consistency, dynamodb in multi region
+
+
+## CAP Patterns in Various Systems 
+
+### A[P] (weakly consistent) 
+highly available but weekly consistent. Every request gets a response but no guarantee that data would be consistent. 
+
+
+Example: Most realtime systems, VOIP systems, memcahced 
+
+### A[P] (Eventually consistent) 
+highly available but consistent after some time delay. Every request gets a response but takes few ms for data to replicate across. 
+
+
+Example: Most NOSql systems,dynamodb
+
+### C (Strongly consistent) 
+may not be highly available but very consistent. Data integrity is guaranteed. 
+
+
+Example: Most RDBMS systems, Transactions, mySql
+
+### Availability
+We can maintain availibity in case of issues by:
+
+#### Replication: always keep data copied
+Master Slave: master processes traffic & replicates to slave. Master goes down, slave becomes master
+
+#### Fail Over: replace a new server when need
+active server processes traffic & send heartbeat to passive. Active goes down, passive becomes active
+
+# DNS server
+
+type google.com in browser -> 
+browser only have name, no ip -> 
+asks for ip from DNS host -> 
+DNS host returns ip back -> 
+browser uses returned IP to connect to actual server
+
+```
+
+ 
+           BROWSER+--------------> GOOGLE (192.168.10.23)
+           +------+               
+             |   ^
+             |   |
+  google.com |   | 192.168.10.23
+             |   |
+             |   |
+             v   |
+           +-------+
+           DNS SERVER
+
+
+```
