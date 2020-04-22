@@ -50,7 +50,7 @@ Throughput = How many requests are possible
   +-------->                                |
            +---------->                     |
                                             Throughput = 3
-                                            
+
                       +---------------->    |
                       <--Latency = t--->    |
                                             |
@@ -155,3 +155,21 @@ browser uses returned IP to connect to actual server
 
 
 ```
+
+
+what: resolve ip from domain name
+
+why: cache, user friendly names
+
+why not: latency, ddos attacks, 
+
+how: has NS (name server, record of dns server), MX (mail xchange, mail server record), A (ip record), CNAME (canonical, alias for other host). route 53 is a dns server.
+
+# Reverse prxoy, 
+what:web server before actual servers
+
+why: hide backend servers, security, SSL termination, compression, caching 
+
+why not: single point of failure, increased complexity
+
+how: varnish with nginx, HAproxy
