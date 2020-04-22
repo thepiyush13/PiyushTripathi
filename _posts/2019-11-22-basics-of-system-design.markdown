@@ -26,11 +26,14 @@ Scalability = How system works for Large no of users
 ```
                          +-----+
     X------Performance-->+     |
+
                          |     |
                          |     |
+
    XXXXXX                |     |
    XXXXXX+-scalability-->+     |
    XXXXXX                |     |
+
                          +-----+
 
 ```
@@ -42,13 +45,16 @@ Throughput = How many requests are possible
 
 ```
 +----------------------------------------+  +
+
                                             |
   +-------->                                |
            +---------->                     |
                                             Throughput = 3
+                                            
                       +---------------->    |
                       <--Latency = t--->    |
                                             |
+
 +----------------------------------------+  +
 
 ```
@@ -120,23 +126,31 @@ active server processes traffic & send heartbeat to passive. Active goes down, p
 # DNS server
 
 type google.com in browser -> 
+
 browser only have name, no ip -> 
+
 asks for ip from DNS host -> 
-DNS host returns ip back -> 
+
+DNS host returns ip back ->
+
 browser uses returned IP to connect to actual server
 
 ```
 
  
            BROWSER+--------------> GOOGLE (192.168.10.23)
-           +------+               
+
+           +------+ 
+
              |   ^
              |   |
   google.com |   | 192.168.10.23
              |   |
              |   |
              v   |
+
            +-------+
+
            DNS SERVER
 
 
