@@ -176,3 +176,17 @@ why: hide backend servers, security, SSL termination, compression, caching
 why not: single point of failure, increased complexity
 
 how: varnish with nginx, HAproxy
+
+## Users 1 to 10 Million Progression
+
+Basic request flow in the system
+
+	User (U)——>Server(S)——>DB
+
+Application Layer progression
+
+	S > DNS > REVERSE PROXY > CACHE > ELB > CDN > READ/WRITE SERVER > ASYNC ENDPOINTS (QUE>WORKER)
+
+Database layer progression
+
+	DB > SQL > NOSQL + S3 > CACHE > REPICATION (MASTER,SLAVE) > SHARDING (PK,SK) > COMPRESSION (SHORTCODE)
