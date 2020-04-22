@@ -3,7 +3,7 @@ layout: post
 title: System Design Basics
 date: 2019-11-22 13:32:20 +0300
 description: Basic of system design # Add post description (optional)
-img: icons/ #i-rest.jpg # Add image post (optional)
+img: icons/workflow.svg #i-rest.jpg # Add image post (optional)
 fig-caption: image # Add figcaption (optional)
 tags: [Tech]
 ---
