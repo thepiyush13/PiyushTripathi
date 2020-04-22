@@ -168,7 +168,7 @@ why not: latency, ddos attacks,
 
 how: has NS (name server, record of dns server), MX (mail xchange, mail server record), A (ip record), CNAME (canonical, alias for other host). route 53 is a dns server.
 
-# Reverse prxoy, 
+## Reverse prxoy, 
 what:web server before actual servers
 
 why: hide backend servers, security, SSL termination, compression, caching 
