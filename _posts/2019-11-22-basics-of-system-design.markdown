@@ -1,44 +1,44 @@
 ---
-layout: post
-title: System Design Basics
-date: 2019-11-22 13:32:20 +0300
-description: Basic of system design # Add post description (optional)
-img: icons/services.svg #i-rest.jpg # Add image post (optional)
-fig-caption: image # Add figcaption (optional)
-tags: [Tech]
+Layout: Post
+Title: System Design Basics
+Date: 2019-11-22 13:32:20 +0300
+Description: Basic Of System Design # Add Post Description (Optional)
+Img: Icons/Services.Svg #I-Rest.Jpg # Add Image Post (Optional)
+Fig-Caption: Image # Add Figcaption (Optional)
+Tags: [Tech]
 ---
 
 
-Vertical scaling
-Horizontal scaling
+Vertical Scaling
+Horizontal Scaling
 Caching
-Load balancing
-Database replication
-Database partitioning
+Load Balancing
+Database Replication
+Database Partitioning
 
 
 # Trade Offs
-## Performance vs Scalability
-Performance = How system works for Single user
+## Performance Vs Scalability
+Performance = How System Works For Single User
 
-Scalability = How system works for Large no of users
+Scalability = How System Works For Large No Of Users
 
 ```
                          
     X------Performance-->+
 
 
-   XXXXXX                
-   XXXXXX+-scalability-->+ 
-   XXXXXX               
+   Xxxxxx                
+   Xxxxxx+-Scalability-->+ 
+   Xxxxxx               
 
 
 ```
 
-## Latency vs Throughput
-Latency = How much time each requests take
+## Latency Vs Throughput
+Latency = How Much Time Each Requests Take
 
-Throughput = How many requests are possible
+Throughput = How Many Requests Are Possible
 
 ```
 +----------------------------------------+  +
@@ -49,144 +49,201 @@ Throughput = How many requests are possible
                                             Throughput = 3
 
                       +---------------->    |
-                      <--Latency = t--->   |
+                      <--Latency = T--->   |
                                             |
 
 +----------------------------------------+  +
 
 ```
 
-## CAP Theorem
-CAP: Consistency, Availability, Partition Tolerance
+## Cap Theorem
+Cap: Consistency, Availability, Partition Tolerance
 
-Used to design systems as you can never have a system with All 3 elements of the CAP.
-
-
-Consistency: is data consistent between nodes
+Used To Design Systems As You Can Never Have A System With All 3 Elements Of The Cap.
 
 
-Availability: is every request processed
+Consistency: Is Data Consistent Between Nodes
 
 
-Partition Tolerance: does system work even if some nodes go down
+Availability: Is Every Request Processed
+
+
+Partition Tolerance: Does System Work Even If Some Nodes Go Down
 
 
 ```
-r1-->N1(d1)___________(link l1)__________N2(d2)<--r2
+R1-->N1(D1)___________(Link L1)__________n2(D2)<--R2
 
- N1/N2 = nodes, 
+ N1/N2 = Nodes, 
  
- d1/d2 = data at N1/N2, 
+ D1/D2 = Data At N1/N2, 
  
- r1/r2 = incoming requests, 
+ R1/R2 = Incoming Requests, 
  
- l1 = partition link
+ L1 = Partition Link
 
 ```
 
-CA: normal cloud systems, d1==d2 and r1,r2 always get response
+Ca: Normal Cloud Systems, D1==D2 And R1,R2 Always Get Response
 
 
-CP: faulty transactions, d1==d2 and l1 down but system working
+Cp: Faulty Transactions, D1==D2 And L1 Down But System Working
 
 
-AP: nosql, d1~=d2, r1/r2 always get response, l1 down but system works
+Ap: Nosql, D1~=D2, R1/R2 Always Get Response, L1 Down But System Works
 
 
-Eventually consistent (weak consistent, A, P): 
-update N1 or N2, background process updates other nodes, time delay for consistency, dynamodb in multi region
+Eventually Consistent (Weak Consistent, A, P): 
+Update N1 Or N2, Background Process Updates Other Nodes, Time Delay For Consistency, Dynamodb In Multi Region
 
 
-## CAP Patterns in Various Systems 
+## Cap Patterns In Various Systems 
 
-### A[P] (weakly consistent) 
-highly available but weekly consistent. Every request gets a response but no guarantee that data would be consistent. 
-
-
-Example: Most realtime systems, VOIP systems, memcahced 
-
-### A[P] (Eventually consistent) 
-highly available but consistent after some time delay. Every request gets a response but takes few ms for data to replicate across. 
+### A[P] (Weakly Consistent) 
+Highly Available But Weekly Consistent. Every Request Gets A Response But No Guarantee That Data Would Be Consistent. 
 
 
-Example: Most NOSql systems,dynamodb
+Example: Most Realtime Systems, Voip Systems, Memcahced 
 
-### C (Strongly consistent) 
-may not be highly available but very consistent. Data integrity is guaranteed. 
+### A[P] (Eventually Consistent) 
+Highly Available But Consistent After Some Time Delay. Every Request Gets A Response But Takes Few Ms For Data To Replicate Across. 
 
 
-Example: Most RDBMS systems, Transactions, mySql
+Example: Most Nosql Systems,Dynamodb
+
+### C (Strongly Consistent) 
+May Not Be Highly Available But Very Consistent. Data Integrity Is Guaranteed. 
+
+
+Example: Most Rdbms Systems, Transactions, Mysql
 
 ### Availability
-We can maintain availibity in case of issues by:
+We Can Maintain Availibity In Case Of Issues By:
 
-#### Replication: always keep data copied
-Master Slave: master processes traffic & replicates to slave. Master goes down, slave becomes master
+#### Replication: Always Keep Data Copied
+Master Slave: Master Processes Traffic & Replicates To Slave. Master Goes Down, Slave Becomes Master
 
-#### Fail Over: replace a new server when need
-active server processes traffic & send heartbeat to passive. Active goes down, passive becomes active
+#### Fail Over: Replace A New Server When Need
+Active Server Processes Traffic & Send Heartbeat To Passive. Active Goes Down, Passive Becomes Active
 
-## DNS server
+## Dns Server
 
-type google.com in browser -> 
+Type Google.Com In Browser -> 
 
-browser only have name, no ip -> 
+Browser Only Have Name, No Ip -> 
 
-asks for ip from DNS host -> 
+Asks For Ip From Dns Host -> 
 
-DNS host returns ip back ->
+Dns Host Returns Ip Back ->
 
-browser uses returned IP to connect to actual server
+Browser Uses Returned Ip To Connect To Actual Server
 
 ```
 
  
-           BROWSER+--------------> GOOGLE (192.168.10.23)
+           Browser+--------------> Google (192.168.10.23)
 
            +------+ 
 
              |   ^
              |   |
-  google.com |   | 192.168.10.23
+  Google.Com |   | 192.168.10.23
              |   |
              |   |
-             v   |
+             V   |
 
            +-------+
 
-           DNS SERVER
+           Dns Server
 
 
 ```
 
 
-what: resolve ip from domain name
+What: Resolve Ip From Domain Name
 
-why: cache, user friendly names
+Why: Cache, User Friendly Names
 
-why not: latency, ddos attacks, 
+Why Not: Latency, Ddos Attacks, 
 
-how: has NS (name server, record of dns server), MX (mail xchange, mail server record), A (ip record), CNAME (canonical, alias for other host). route 53 is a dns server.
+How: Has Ns (Name Server, Record Of Dns Server), Mx (Mail Xchange, Mail Server Record), A (Ip Record), Cname (Canonical, Alias For Other Host). Route 53 Is A Dns Server.
 
-## Reverse prxoy, 
-what:web server before actual servers
+## Reverse Prxoy, 
+What:Web Server Before Actual Servers
 
-why: hide backend servers, security, SSL termination, compression, caching 
+Why: Hide Backend Servers, Security, Ssl Termination, Compression, Caching 
 
-why not: single point of failure, increased complexity
+Why Not: Single Point Of Failure, Increased Complexity
 
-how: varnish with nginx, HAproxy
+How: Varnish With Nginx, Haproxy
 
-## Users 1 to 10 Million Progression
+## Users 1 To 10 Million Progression
 
-Basic request flow in the system
+Basic Request Flow In The System
 
-	User (U)——>Server(S)——>DB
+	User (U)——>Server(S)——>Db
 
-Application Layer progression
+Application Layer Progression
 
-	S > DNS > REVERSE PROXY > CACHE > ELB > CDN > READ/WRITE SERVER > ASYNC ENDPOINTS (QUE>WORKER)
+	S > Dns > Reverse Proxy > Cache > Elb > Cdn > Read/Write Server > Async Endpoints (Que>Worker)
 
-Database layer progression
+Database Layer Progression
 
-	DB > SQL > NOSQL + S3 > CACHE > REPICATION (MASTER,SLAVE) > SHARDING (PK,SK) > COMPRESSION (SHORTCODE)
+	Db > Sql > Nosql + S3 > Cache > Repication (Master,Slave) > Sharding (Pk,Sk) > Compression (Shortcode)
+
+## Cache
+What: Memoized Execution Results
+
+Why: Improve Lookup Times
+
+How:
+
+Types:
+
+    Client Cache > Cdn Cache > Web Server Cache > Application Cache (Memcached/Redis) > Datbase Cache (Query, Object) 
+Write Methods:
+
+Cache-Aside: 
+
+  * Client->Cache : Found(√) ->Client | Not_found(X) ->Db->Update Cache -> Client)
+
+  * Good: Lazy Loaded, Only Needed Data Is Cached
+
+  * Bad: Cache Miss = 3 Trips = Delay, Cache Update Depends On Client Request(Ttl Fixes It)
+
+Write Through: 
+
+* Client->Cache->Db->Client
+
+* Good: No Cache Miss, Always Updated Cache
+
+* Bad: Delay On Write, Too Much Data In Cache
+
+
+Write Behind: 
+
+* Client->Cache->Client....>Async Update To Db
+
+* Good: Faster Writes, Always Updated Cache
+
+* Bad: Data Loss If Async Failed, Too Much Data In Cache
+
+
+Refresh Ahead: 
+
+* Client->Cache->Client....>Async Update From Db
+
+* Good: Predictive Cache, Only Hot Items Cached
+
+* Bad: Hard To Predict Hot Items Accurately 
+
+Why Not:
+
+Maintain Consistancy Between Cache And Storage, Extra Work
+
+Single Point Of Failure Unless Distributed(Memcached)
+
+Cache Invlidation Is A Hard Problem (Lru,Lfu)
+
+
+
