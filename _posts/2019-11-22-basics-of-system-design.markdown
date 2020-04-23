@@ -168,7 +168,7 @@ Why Not: Latency, Ddos Attacks,
 
 How: Has Ns (Name Server, Record Of Dns Server), Mx (Mail Xchange, Mail Server Record), A (Ip Record), Cname (Canonical, Alias For Other Host). Route 53 Is A Dns Server.
 
-## Reverse Prxoy, 
+## Reverse Proxy, 
 What:Web Server Before Actual Servers
 
 Why: Hide Backend Servers, Security, Ssl Termination, Compression, Caching 
@@ -189,10 +189,10 @@ Application Layer Progression
 
 Database Layer Progression
 
-	Db > Sql > Nosql + S3 > Cache > Repication (Master,Slave) > Sharding (Pk,Sk) > Compression (Shortcode)
+	Db > Sql > Nosql + S3 > Cache > Replication (Master,Slave) > Sharding (Pk,Sk) > Compression (Shortcode)
 
 ## Cache
-What: Memoized Execution Results
+What: Memoize Execution Results
 
 Why: Improve Lookup Times
 
@@ -239,11 +239,11 @@ Refresh Ahead:
 
 Why Not:
 
-Maintain Consistancy Between Cache And Storage, Extra Work
+Maintain Consistency Between Cache And Storage, Extra Work
 
 Single Point Of Failure Unless Distributed(Memcached)
 
-Cache Invlidation Is A Hard Problem (Lru,Lfu)
+Cache Invalidation Is A Hard Problem (Lru,Lfu)
 
 
 
