@@ -41,18 +41,21 @@ Latency = How Much Time Each Requests Take
 Throughput = How Many Requests Are Possible
 
 ```
-+----------------------------------------+  +
 
-                                             |
-  +-------->                                |
-           +---------->                     |
-                                            Throughput = 3
 
-                      +---------------->    |
-                      <--Latency = T--->   |
-                                            |
+                          latency   +--+
+                 +----------------->+  |
+                                    |  |
+ throughput                         |  |
+                 +----------------->+  |
+                                    |  |
+                                    |  |
+                 +------------------>  |
+                                    |  |
+                                    +--+
 
-+----------------------------------------+  +
+
+
 
 ```
 
@@ -205,7 +208,7 @@ Write Methods:
 
 Cache-Aside: 
 
-  * Client->Cache : Found(√) ->Client | Not_found(X) ->Db->Update Cache -> Client)
+  * Client->Cache, Found(√) ->Client | Not_found(X) ->Db->Update Cache -> Client)
 
   * Good: Lazy Loaded, Only Needed Data Is Cached
 
@@ -247,3 +250,4 @@ Cache Invalidation Is A Hard Problem (Lru,Lfu)
 
 
 
+## Load Balancer (ELB)
