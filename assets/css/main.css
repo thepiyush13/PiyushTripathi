@@ -141,7 +141,7 @@ strong {
 code,
 kbd,
 samp {
-  font-family: sans-serif, monospace;
+  font-family: monospace;
   /* 1 */
   font-size: 1em;
   /* 2 */
