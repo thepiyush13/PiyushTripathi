@@ -3,7 +3,7 @@ layout: post
 title: System Design Basics
 date: 2020-11-22 13:32:20 +0300
 description: Basic Of System Design # Add Post Description (Optional)
-Img: icons/services.svg #I-Rest.Jpg # Add Image Post (Optional)
+img: icons/services.svg #I-Rest.Jpg # Add Image Post (Optional)
 fig-Caption: Image # Add Figcaption (Optional)
 tags: [Tech]
 ---
