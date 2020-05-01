@@ -3,7 +3,7 @@ layout: post
 title: System Design Basics
 date: 2019-11-22 13:32:20 +0300
 description: Basic Of System Design # Add Post Description (Optional)
-Img: icons/services.Svg #I-Rest.Jpg # Add Image Post (Optional)
+Img: icons/services.svg #I-Rest.Jpg # Add Image Post (Optional)
 fig-Caption: Image # Add Figcaption (Optional)
 tags: [Tech]
 ---
@@ -41,27 +41,18 @@ Latency = How Much Time Each Requests Take
 Throughput = How Many Requests Are Possible
 
 ```
++----------------------------------------+  +
 
+                                             |
+  +-------->                                |
+           +---------->                     |
+                                            Throughput = 3
 
+                      +---------------->    |
+                      <--Latency = T--->   |
+                                            |
 
-                    +----+
-  +------------->   |    |
-                    |    |
-                    |    |
-  +------------->   |    |
-                    |    |
-                    |    |
- +--------------->  |    |
-                    |    |
-                    |    |
-   +--------------> |    |
-                    |    |
-                    +----+
-
-
-
-
-
++----------------------------------------+  +
 
 ```
 

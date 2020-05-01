@@ -810,22 +810,22 @@ blockquote {
   color: #ada8a8;
 }
 
-pre {
+/* pre {
   padding: 1rem 2rem;
   overflow: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
   word-break: break-all;
-}
+} */
 
-pre code {
+/* pre code {
   border: 0;
   padding-right: 0;
   padding-left: 0;
   overflow: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
-  word-break: break-all;
+  word-break: break-all; */
 }
 
 table {
