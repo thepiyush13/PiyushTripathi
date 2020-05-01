@@ -1488,9 +1488,9 @@ a.newer-posts:hover {
 .inline_toc li a{
   color: black;
 }
-.page-content p {
-  padding-left: 2% !important;
-}
 list p {
   padding-left: 0% !important;
+}
+.page-content p {
+  padding-left: 2% !important;
 }
