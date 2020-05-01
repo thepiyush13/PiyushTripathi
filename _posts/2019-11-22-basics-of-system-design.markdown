@@ -248,3 +248,37 @@ Cache Invalidation Is A Hard Problem (Lru,Lfu)
 
 
 ## Load Balancer (ELB)
+
+```
+Requests      +-----+   +----->Server1
++-----------> |     |   |
+              |     |   |
++-----------> |ELB  +--------->Server2
+              |     |   |
++-----------> |     |   |
+              |     |   +----->Server3
+              +-----+
+    Modes: active-active, active-passive
+
+    Server Selection:
+    Roundrobin/least_busy/random/sticky_session
+
+
+```
+
+### Why:
+1. Distribute load to multiple servers
+2. Prevent overloading single server
+3. Prevent requests to unhealthy servers
+
+### How:
+### ELB: Elastic Load Balancer:
+ELB stands for Elastic load balancer. It is used in places where we want to distribute the incoming request load to several servers as opposed to a single server. It operates on layer 4 (network) and relatively less compute intensive.
+
+### ALB: Elastic Load Balancer:
+It is used to distribute application load to different internal servers. It operates on layer 7 (application) and offer more flexibility but needs more computing/resources.
+
+### Why not:
+1. Single point of failure unless setup in active-active,active-passive mode
+2. Performance bottleneck
+3. Increases complexity for maintaining sticky sessions etc
