@@ -21,7 +21,7 @@ Database Partitioning
 ## Performance Vs Scalability
 Performance = How System Works For Single User
 
-Scalability = How System Works For Large No Of Users
+Scalability = How System Works For a Large No Of Users
 
 ```
                          
