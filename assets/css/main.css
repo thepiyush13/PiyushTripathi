@@ -1491,3 +1491,6 @@ a.newer-posts:hover {
 .page-content p {
   padding-left: 2% !important;
 }
+list p {
+  padding-left: 0% !important;
+}
