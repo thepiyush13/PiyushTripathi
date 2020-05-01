@@ -1171,7 +1171,7 @@ footer .copyright {
 
 .post .post-content p {
   margin-top: 0;
-  padding: 1% !important;
+  padding-left: 2% !important;
 }
 
 a.older-posts, a.newer-posts {
