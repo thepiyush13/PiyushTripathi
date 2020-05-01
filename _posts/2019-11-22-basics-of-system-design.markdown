@@ -250,6 +250,8 @@ Cache Invalidation Is A Hard Problem (Lru,Lfu)
 ## Load Balancer (ELB)
 
 ```
+
+
 Requests      +-----+   +----->Server1
 +-----------> |     |   |
               |     |   |
