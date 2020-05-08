@@ -284,3 +284,54 @@ It is used to distribute application load to different internal servers. It oper
 1. Single point of failure unless setup in active-active,active-passive mode
 2. Performance bottleneck
 3. Increases complexity for maintaining sticky sessions etc
+
+
+## ASYNC operations
+
+```
+
+                      Queue
+Publisher       +--------------------+  Subscriber
+--------------> |  ||  ||  ||  || || | ---------->
+  job           ++-------------------+
+                 | |               |
+  <--------------+ |               v
+     jobID         |            if QueSize > Memory
+                   v             Maintain BackPressure
+                 queue_item         +
+         (itemid,jobid,data)        |
+                                    |
+                                    v
+                                  Send response:
+                                  HTTP 503
+                                  server busy
+                                     | ^
+                                     | |
+                                     | |
+                                     | |
+                                     v +
+                                  User retries
+                                  exponential backoff
+
+
+```
+
+### Why:
+1. Improves App Responsiveness By Pushing Compute Intensive Operations In The Background 
+2. Good For Large File Uploads, High Volume Of Data, Concurrent Requests
+3. Can Help Doing Some Compute In-Advance (Timeline Generation Etc)
+
+### How:
+### Message Queue:
+It Gets The Message From A Publisher, Holds It And Then Delivers It To Subscribers. No Processing Is Done In The Queue Itself. Example Is:
+1. Redis: Simple But Could Loose Messages
+2. Rabbitmq: Popular But Needs Amqp Protocol Use
+3. Amazon Sqs: Managed Queue But High Latency And Message Sometimes Delivered Twice
+
+
+### Task Queue:
+This Takes Task Definition And Data, Processes It And Delivers The Results.
+
+### Why Not:
+1. Not Suitable For Real-Time Or Time Critical (Near Instant) Operations
+2. Queue Size Can Exceed Memory: This Could Lead To Slow Performance, Cache Miss Etc. Solution Is To Use Maintain Back Pressure. Back Pressure Works By Sending A User Http 503 (Server Busy) If The Queue Is Filled Up. User Can Then Retry Normally Or Use Exponential Backoff (Time B/W Each Retry Increases Exponentially)
