@@ -61,14 +61,10 @@ Cap: Consistency, Availability, Partition Tolerance
 
 Used To Design Systems As You Can Never Have A System With All 3 Elements Of The Cap.
 
+1. Consistency: Is Data Consistent Between Nodes
+2. Availability: Is Every Request Processed
+3. Partition Tolerance: Does System Work Even If Some Nodes Go Down
 
-Consistency: Is Data Consistent Between Nodes
-
-
-Availability: Is Every Request Processed
-
-
-Partition Tolerance: Does System Work Even If Some Nodes Go Down
 
 
 ```
@@ -192,18 +188,20 @@ Database Layer Progression
 	Db > Sql > Nosql + S3 > Cache > Replication (Master,Slave) > Sharding (Pk,Sk) > Compression (Shortcode)
 
 ## Cache
-What: Memoize Execution Results
+### What: 
+Memoize Execution Results
 
-Why: Improve Lookup Times
+### Why: 
+Improve Lookup Times
 
-How:
+### How:
 
-Types:
+#### Types:
 
     Client Cache > Cdn Cache > Web Server Cache > Application Cache (Memcached/Redis) > Datbase Cache (Query, Object) 
 Write Methods:
 
-Cache-Aside: 
+**Cache-Aside**
 
   * Client->Cache, Found(√) ->Client | Not_found(X) ->Db->Update Cache -> Client)
 
@@ -211,7 +209,7 @@ Cache-Aside:
 
   * Bad: Cache Miss = 3 Trips = Delay, Cache Update Depends On Client Request(Ttl Fixes It)
 
-Write Through: 
+**Write Through**
 
 * Client->Cache->Db->Client
 
@@ -220,7 +218,7 @@ Write Through:
 * Bad: Delay On Write, Too Much Data In Cache
 
 
-Write Behind: 
+**Write Behind**
 
 * Client->Cache->Client....>Async Update To Db
 
@@ -229,7 +227,7 @@ Write Behind:
 * Bad: Data Loss If Async Failed, Too Much Data In Cache
 
 
-Refresh Ahead: 
+**Refresh Ahead** 
 
 * Client->Cache->Client....>Async Update From Db
 
@@ -237,13 +235,11 @@ Refresh Ahead:
 
 * Bad: Hard To Predict Hot Items Accurately 
 
-Why Not:
+### Why Not:
 
-Maintain Consistency Between Cache And Storage, Extra Work
-
-Single Point Of Failure Unless Distributed(Memcached)
-
-Cache Invalidation Is A Hard Problem (Lru,Lfu)
+1. Maintain Consistency Between Cache And Storage, Extra Work
+2. Single Point Of Failure Unless Distributed(Memcached)
+3. Cache Invalidation Is A Hard Problem (Lru,Lfu)
 
 
 
@@ -273,18 +269,18 @@ Requests      +-----+   +----->Server1
 2. Prevent overloading single server
 3. Prevent requests to unhealthy servers
 
+### Why not:
+1. Single point of failure unless setup in active-active,active-passive mode
+2. Performance bottleneck
+3. Increases complexity for maintaining sticky sessions etc
+
+
 ### How:
 ### ELB: Elastic Load Balancer:
 ELB stands for Elastic load balancer. It is used in places where we want to distribute the incoming request load to several servers as opposed to a single server. It operates on layer 4 (network) and relatively less compute intensive.
 
 ### ALB: Elastic Load Balancer:
 It is used to distribute application load to different internal servers. It operates on layer 7 (application) and offer more flexibility but needs more computing/resources.
-
-### Why not:
-1. Single point of failure unless setup in active-active,active-passive mode
-2. Performance bottleneck
-3. Increases complexity for maintaining sticky sessions etc
-
 
 ## ASYNC operations
 
@@ -321,6 +317,10 @@ Publisher       +--------------------+  Subscriber
 2. Good For Large File Uploads, High Volume Of Data, Concurrent Requests
 3. Can Help Doing Some Compute In-Advance (Timeline Generation Etc)
 
+### Why Not:
+1. Not Suitable For Real-Time Or Time Critical (Near Instant) Operations
+2. Queue Size Can Exceed Memory: This Could Lead To Slow Performance, Cache Miss Etc. Solution Is To Use Maintain Back Pressure. Back Pressure Works By Sending A User Http 503 (Server Busy) If The Queue Is Filled Up. User Can Then Retry Normally Or Use Exponential Backoff (Time B/W Each Retry Increases Exponentially)
+
 ### How:
 ### Message Queue:
 It Gets The Message From A Publisher, Holds It And Then Delivers It To Subscribers. No Processing Is Done In The Queue Itself. Example Is:
@@ -332,6 +332,3 @@ It Gets The Message From A Publisher, Holds It And Then Delivers It To Subscribe
 ### Task Queue:
 This Takes Task Definition And Data, Processes It And Delivers The Results.
 
-### Why Not:
-1. Not Suitable For Real-Time Or Time Critical (Near Instant) Operations
-2. Queue Size Can Exceed Memory: This Could Lead To Slow Performance, Cache Miss Etc. Solution Is To Use Maintain Back Pressure. Back Pressure Works By Sending A User Http 503 (Server Busy) If The Queue Is Filled Up. User Can Then Retry Normally Or Use Exponential Backoff (Time B/W Each Retry Increases Exponentially)
