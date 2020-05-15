@@ -332,3 +332,19 @@ It Gets The Message From A Publisher, Holds It And Then Delivers It To Subscribe
 ### Task Queue:
 This Takes Task Definition And Data, Processes It And Delivers The Results.
 
+## OSI 7 Layer Model
+### PDNTSPA
+
+```
+
++-----------+        +-------------+       +---------------+    +---------------+
+|  Physical +------->+   Data      +-----> |   Network     +--> |  Transport    |tcp/udp
++-----------+        +-------------+       +---------------+    +------+--------+
+  hub                    switch                  ip                    |
+                                                                       v
+                     +-------------+       +---------------+    +------+--------+
+                     | Application | <---+ | Presentation  | <--|  Session      |ports,nfs
+                     +-------------+       +---------------+    +---------------+
+                        smtp                  jpeg/ascii
+
+```
