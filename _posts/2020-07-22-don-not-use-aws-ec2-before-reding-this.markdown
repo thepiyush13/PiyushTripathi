@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Don't use ec2 before you read this
+title: Don't use EC2 before you read this
 date: 2020-08-22 13:32:20 +0300
 description: Planning to use EC2? read this first # Add Post Description (Optional)
 img: icons/electronics.svg #I-Rest.Jpg # Add Image Post (Optional)
