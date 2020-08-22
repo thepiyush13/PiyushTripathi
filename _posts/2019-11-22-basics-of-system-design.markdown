@@ -348,3 +348,31 @@ This Takes Task Definition And Data, Processes It And Delivers The Results.
                         smtp                  jpeg/ascii
 
 ```
+
+- HTTP protocol is based on TCP (POST, GET, PUT, PATCH, DELETE)
+  1. POST: create resources or trigger a process
+  2. GET: retrieve a resource
+  3. PUT: create a single resource
+  4. PATCH: update a resource
+  5. DELETE: delete a resource
+
+- TCP is handshake based, slow but reliable, i.e. web servers
+- UDP is connectionless, fast but lossy, VOIP, ream time systems
+
+
+
+| Operation | RPC | REST |
+|---|---|---|
+| Signup    | **POST** /signup | **POST** /persons |
+| Resign    | **POST** /resign<br/>{<br/>"personid": "1234"<br/>} | **DELETE** /persons/1234 |
+| Read a person | **GET** /readPerson?personid=1234 | **GET** /persons/1234 |
+| Read a person’s items list | **GET** /readUsersItemsList?personid=1234 | **GET** /persons/1234/items |
+| Add an item to a person’s items | **POST** /addItemToUsersItemsList<br/>{<br/>"personid": "1234";<br/>"itemid": "456"<br/>} | **POST** /persons/1234/items<br/>{<br/>"itemid": "456"<br/>} |
+| Update an item    | **POST** /modifyItem<br/>{<br/>"itemid": "456";<br/>"key": "value"<br/>} | **PUT** /items/456<br/>{<br/>"key": "value"<br/>} |
+| Delete an item | **POST** /removeItem<br/>{<br/>"itemid": "456"<br/>} | **DELETE** /items/456 |
+
+
+Relational Vs Document Model:
+
+Impedence mismatch: It is a term that describes mismatch between the format of data stored in application and the data stores in the database. Because of this, NoSql was born. In Sql, we need a middleware to translate application state or data (usually in form on json or ab object) to databse format ( tabular in case of sql). 
+
