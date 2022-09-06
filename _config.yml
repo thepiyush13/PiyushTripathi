@@ -9,7 +9,7 @@ site-twitter: #if your site has a twitter account, enter it here
 # Author Settings
 author: Piyush Tripathi # add your name
 author-img: "profile pic.jpg" # add your photo
-about-author: I am a Software Enginner working on cloud computing and Highly scaled consumer apps. # add description
+about-author: I am a Software Enginner working on cloud computing and Highly scaled consumer apps. Location: San Francisco # add description
 social-twitter: false # add your Twitter handle
 social-facebook: false # add your Facebook handle
 social-github: thepiyush13 # add your Github handle
