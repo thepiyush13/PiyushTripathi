@@ -8,7 +8,7 @@ site-twitter: #if your site has a twitter account, enter it here
 
 # Author Settings
 author: Piyush Tripathi # add your name
-author-img: piyushtripathi.jpg # add your photo
+author-img: "profile pic.jpg" # add your photo
 about-author: I am a Software Enginner working on cloud computing, AWS and Highly scaled consumer apps. # add description
 social-twitter: false # add your Twitter handle
 social-facebook: false # add your Facebook handle
