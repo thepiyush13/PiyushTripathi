@@ -1,5 +1,6 @@
 
 ---
+
 layout: post
 title: Basics of Ruby
 date: 2022-08-12 13:32:20 +0300
@@ -7,6 +8,7 @@ description: Ruby language basics
 img: icons/document.svg
 fig-caption: test caption # Add figcaption (optional)
 tags: [Ruby]
+
 ---
 
 # Ruby Notes
@@ -47,7 +49,7 @@ tags: [Ruby]
 
 ### Blocks:
 - Block Is A Nameless Function That Can Be Passed Around
-- Array.Each Someblock: Here Someblock Could Be {|Elm| Print Elm} Or Do |Elm| Print Elm End
+- `Array.Each Someblock` : Here Someblock Could Be {|Elm| Print Elm} Or Do |Elm| Print Elm End
 - You Can Send Block To A Function That Has Yield, The Function Will Run The Block 
 	- `Def Myfun: Yield`, 
 	- Call Like This: `Myfun <Block>` , I.E. `Myfun {Puts "Something"}`
@@ -69,10 +71,10 @@ Ruby Supports Single Inheritence
     M.Somefunction()
 
 ### Accessors:
-   - Attr :Bark, True : Sets Getter And Setter For Bark I.E. Class.Bark = X, Print Class.Bark
-   - Attr_Reader :Bark: Sets Getter
-   - Attr_Writter :Bark: Sets Setter
-   - Attr_Accessor :Bark: Sets Getter & Setter Both
+   - `Attr :Bark, True` : Sets Getter And Setter For Bark I.E. Class.Bark = X, Print Class.Bark
+   - `Attr_Reader :Bark` : Sets Getter
+   - `Attr_Writter :Bark` : Sets Setter
+   - `Attr_Accessor :Bark` : Sets Getter & Setter Both
 
 - @Var Is Instance Variable: Unique Among Each Instance
 - @@Var Is Class Variable: Shared Across Instances 
