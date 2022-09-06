@@ -2,7 +2,7 @@
 ---
 layout: post
 title: Basics of Ruby
-date: 2022-09-12 13:32:20 +0300
+date: 2022-08-12 13:32:20 +0300
 description: Ruby language basics
 img: icons/document.svg
 fig-caption: test caption # Add figcaption (optional)
