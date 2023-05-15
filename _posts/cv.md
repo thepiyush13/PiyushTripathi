@@ -7,10 +7,11 @@ description: Piyush Tripathi CV
 ---
 
 
-**Name:** Piyush T  
-**Email:** hi@piyush.org
-**Phone:** +1-4085799763  
+**Name:** Piyush T       
+**Email:** hi@piyush.org      
+**Phone:** +1-4085799763     
 **Location:** San Francisco, CA
+
 
 # Summary
 A highly skilled and experienced software engineer with over 10 years of experience in the Computer Science and Engineering industry. Proficient in cloud, FinTech, and AI technologies, with a strong background in scaling infrastructure and creating tools and services. A Microsoft certified programmer, Google certified expert, and ITIL V3.0 certified IT professional. Passionate about creating innovative solutions that solve complex problems.
