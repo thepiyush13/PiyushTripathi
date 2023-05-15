@@ -1,0 +1,91 @@
+---
+layout: post
+title: Piyush Tripathi CV
+date: 2023-04-12 13:32:20 +0300
+description: Piyush Tripathi CV
+
+---
+
+
+**Name:** Piyush T  
+**Email:** hi@piyush.org
+**Phone:** +1-4085799763  
+**Location:** San Francisco, CA
+
+# Summary
+A highly skilled and experienced software engineer with over 10 years of experience in the Computer Science and Engineering industry. Proficient in cloud, FinTech, and AI technologies, with a strong background in scaling infrastructure and creating tools and services. A Microsoft certified programmer, Google certified expert, and ITIL V3.0 certified IT professional. Passionate about creating innovative solutions that solve complex problems.
+
+# Education
+- Master of Science in Information Systems, GPA 3.7, May 2016, Texas A&M University, College Station, USA
+- Bachelor of Technology in Electronics and Communication, GPA 3.4, June 2010, National Institute of Technology, Raipur, INDIA (Ranked 60th among 2000+ engineering colleges in India)
+
+# Key Achievements
+- Peer reviewer for Journal of Internet medical research journal which is a leading medical informatics research journal.
+- Winner of National Achiever Award in Computing 2023
+- Served as a judge for prestigious awards such as the Golden Bridge Awards (SVSU), The American Business Awards, and the SIA Codie awards.
+- Worked on the platform that powers New York State's COVID-19 contact tracing program, which was also praised by ex-president Barack Obama.
+- Acted as a Tech design expo judge for Michigan Technical University, USA, and Texas A&M University, USA.
+- Created software products to generate publication-quality graphics for medical research papers of America's top veterinary medical school.
+- Co-created an email platform that sends out over 50 billion emails per month and is used by major companies such as Nike, eBay, Dell, and Red Cross.
+
+# Experience
+
+**Software Engineer, Square**  
+Aug 2022 – Present
+
+- Working with the Help Experience team to create tools and services that positively affect millions of people.
+
+**Software Engineer, Twilio Sendgrid**  
+July 2019 – Aug 2022
+
+- Worked on scaling the infrastructure of the world's largest cloud-based email delivery platform.
+- Worked with cloud technologies at a high scale (50 Billion+ emails per month) environment.
+- Worked with golang, python, aws and NoSQL.
+
+**Software Engineer, Factset Research Systems**  
+July 2016 – July 2019
+
+- Coding for new releases, fixes, and enhancements within a structured environment (including test-driven development and agile approaches) to financial products used globally.
+- Worked with Python, MySQL, and data structures.
+
+**Software Programmer, Texas A&M University**  
+Sept 2014 – May 2016
+
+- Created web tools to generate publication-quality graphics for medical research papers of America's top veterinary medical school.
+- Worked with Java, HTML, Python, and other web technologies.
+
+**Software Engineer, NReach**  
+Aug 2012 – May 2014
+
+- Transformed the National Entrepreneurial Network (NEN) system into an efficient and consumer-friendly module.
+- Developed using SDLC (Agile methodology) and helped organize the E-week event with over 35,000 participants.
+
+**Application Engineer, CTS**  
+July 2010 – Aug 2012
+
+- Saved $18,000 worth of man-hours by creating scripts to automate data insertion for a client, one of the world's largest pharmaceutical companies.
+
+# Technical Skills
+
+- API development
+- Microservices
+- System Design
+- High Scale Computing
+- Software Engineering
+- Data Structures
+- Java
+- Python
+- Unix
+
+# Certifications
+
+- Microsoft Certified Programmer: Programming in HTML5 with JavaScript and CSS3: License#SR8976659
+- CSCE-629(Algorithms, Data Structures), Dept. of Computer Science & Engineering, Texas A&M University
+- ISYS-601(Object Oriented Business Programming), Mays Business School, Texas A&M University
+
+# Personal Projects
+
+- TabManager Chrome extension (2015): Free chrome extension which provides better tab management to Google Chrome power users
+- Project Demo: [http://www.piyushtripathi.com](http://www.piyushtripathi.com)
+- GainGuy: [www.gainguy.com](www.gainguy.com) Free and popular nutrition app with more than 10,000 users
+
