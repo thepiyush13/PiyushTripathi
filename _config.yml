@@ -9,18 +9,18 @@ site-twitter: #if your site has a twitter account, enter it here
 # Author Settings
 author: Piyush Tripathi # add your name
 author-img: "profile pic.jpg" # add your photo
-about-author: I am a Software Enginner working on cloud computing and Highly scaled consumer apps. Location: San Francisco # add description
-social-twitter: false # add your Twitter handle
-social-facebook: false # add your Facebook handle
-social-github: thepiyush13 # add your Github handle
-social-linkedin: piyush13 # add your Linkedin handle
-social-email: false # add your Email address
+about-author: I am a Software Enginner working on cloud computing and Highly scaled consumer apps.
+social-twitter: false 
+social-facebook: false 
+social-github: thepiyush13 
+social-linkedin: piyush13 
+social-email: false 
 
 # Disqus
-discus-identifier: piyushtripathi # add your discus identifier
+discus-identifier: piyushtripathi
 
 # Tracker
-analytics: UA-152728342-1 # Google Analytics
+analytics: UA-152728342-1
 
 # Build Settings
 markdown: kramdown
